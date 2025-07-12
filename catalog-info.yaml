@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sfmet73ck-nodejs-gitops
+  description: This is GitOps manifest for sfmet73ck-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=sfmet73ck-nodejs
+    backstage.io/kubernetes-id: sfmet73ck-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: sfmet73ck-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:sfmet73ck-nodejs
